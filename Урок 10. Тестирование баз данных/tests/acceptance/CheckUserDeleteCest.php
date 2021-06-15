@@ -61,6 +61,6 @@ class CheckUserDeleteCest
       $I -> waitForElement(PageObject::$lastUser);
       $I -> seeNumberOfElements(PageObject::$countOfUsers, PageObject::NUMBER_OF_USER);
       $I -> click(PageObject::$snapButton);
-      $I -> seeInCollection(PageObject::$collectionUrl, ['canBeKilledBySnap' => false, 'owner' => $this -> data['owner']]);
+      $I -> dontSeeInCollection(PageObject::$collectionUrl, ['canBeKilledBySnap' => true, 'owner' => $this -> data['owner']]);
     }
 }
